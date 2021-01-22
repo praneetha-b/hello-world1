@@ -4,13 +4,13 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                git credentialsId: 'github', url: 'https://github.com/javahometech/myweb'
+                git credentialsId: '3d6c8706-324a-402c-8316-65a37d7b7a5c', url: 'https://github.com/praneetha-b/pipe.git'
             }
         }
         stage("Maven Build"){
             steps{
                 sh "mvn clean package"
-                sh "mv target/*.war target/myweb.war"
+                
             }
         }
         stage("deploy-dev"){
